@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -17,7 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <header className="bg-zinc-800 p-4">
-          <h2 className="text-slate-100	font-bold">BZB</h2>
+          <Link href="/">
+            <h2 className="text-slate-100	font-bold">BZB</h2>
+          </Link>
         </header>
         {children}
       </body>
