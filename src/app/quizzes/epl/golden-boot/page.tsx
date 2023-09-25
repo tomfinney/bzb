@@ -15,18 +15,13 @@ function QuizItem({
   answered: boolean;
   ended: boolean;
 }) {
-  let answerContainerClassName =
-    "max-w-xs flex-1 bg-zinc-400 h-full transition ease-in-out";
+  const answerContainerClassName = `max-w-xs flex-1 bg-zinc-${
+    answered ? 200 : 400
+  } h-full transition ease-in-out`;
 
-  let answerClassName = "opacity-0 transition ease-in-out";
-
-  if (answered) {
-    answerContainerClassName += " bg-zinc-200";
-  }
-
-  if (answered || ended) {
-    answerClassName += "opacity-100";
-  }
+  const answerClassName = `opacity-${
+    answered || ended ? 100 : 0
+  } transition ease-in-out`;
 
   return (
     <div className="flex">
